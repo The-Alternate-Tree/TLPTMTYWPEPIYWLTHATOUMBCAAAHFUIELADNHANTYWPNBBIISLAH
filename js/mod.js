@@ -1,18 +1,18 @@
 let modInfo = {
-	name: "The ??? Tree",
-	author: "nobody",
+	name: "The Ultimate Tree Rewritten",
+	author: "liam",
 	pointsName: "points",
-	modFiles: ["layers.js", "tree.js"],
+	modFiles: ["prestige.js", "tree.js"],
 
 	discordName: "",
 	discordLink: "",
-	initialStartPoints: new Decimal (10), // Used for hard resets and new players
-	offlineLimit: 1,  // In hours
+	initialStartPoints: new Decimal (0), // Used for hard resets and new players
+	offlineLimit: 0,  // In hours
 }
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.0",
+	num: "1.00",
 	name: "Literally nothing",
 }
 
@@ -41,8 +41,12 @@ function getPointGen() {
 	if(!canGenPoints())
 		return new Decimal(0)
 
-	let gain = new Decimal(1)
-	return gain
+	base = new Decimal(1)
+	mult = new Decimal(1)
+	exp = new Decimal(1)
+
+
+	return base.times(mult).pow(exp)
 }
 
 // You can add non-layer related variables that should to into "player" and be saved here, along with default values
