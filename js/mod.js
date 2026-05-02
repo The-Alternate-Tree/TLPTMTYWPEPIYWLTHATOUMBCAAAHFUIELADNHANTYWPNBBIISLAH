@@ -1,8 +1,8 @@
 let modInfo = {
-	name: "The Ultimate Tree Rewritten",
+	name: "TLPTMTYWPEPIYWLTHATOUMBCAAAHFUIELADNHANTYWPNBBIISLAH",
 	author: "liam",
 	pointsName: "points",
-	modFiles: ["prestige.js", "tree.js"],
+	modFiles: ["prestige.js", 'achievements.js', "tree.js"],
 
 	discordName: "",
 	discordLink: "",
@@ -44,6 +44,9 @@ function getPointGen() {
 	base = new Decimal(1)
 	mult = new Decimal(1)
 	exp = new Decimal(1)
+
+	if (hasUpgrade('p', 11)) mult = mult.times(2)
+	if (hasUpgrade('p', 12)) mult = mult.times(upgradeEffect('p', 12))
 
 
 	return base.times(mult).pow(exp)
